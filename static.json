@@ -8,10 +8,10 @@
     "version": "1.0.0",
     "attributes": {
       "metadata": {
-        "title": "Search | Globus Search Portal"
+        "title": "Example: Globus Embed"
       },
       "content": {
-        "headline": "Globus Search Portal"
+        "headline": "Example: Globus Embed"
       },
       "features": {
         "transfer": false
@@ -33,7 +33,7 @@
       },
       "globus": {
         "search": {
-          "index": "78b92aca-e361-4307-8f66-bc448f20e2c3",
+          "index": "7442cbd9-2766-42b9-9512-9195b12ed167",
           "facets": [
             {
               "name": "Tags",
