@@ -32,8 +32,11 @@
         }
       },
       "globus": {
+        "application": {
+          "client_id": "7442cbd9-2766-42b9-9512-9195b12ed167"
+        },
         "search": {
-          "index": "7442cbd9-2766-42b9-9512-9195b12ed167",
+          "index": "fbd23dc9-546c-4ecf-857f-708e6e706fa0",
           "facets": [
             {
               "name": "Tags",
