@@ -31,7 +31,10 @@
             {
               "label": "Sample",
               "property": "entries[0].content.sample",
-              "type": "globus.embed"
+              "type": "globus.embed",
+              "options": {
+                "collection": "a6f165fa-aee2-4fe5-95f3-97429c28bf82"
+              }
             }
           ]
         }
