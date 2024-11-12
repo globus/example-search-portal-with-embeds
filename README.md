@@ -27,17 +27,7 @@ When providing a `FieldDefinition` to a component (e.g. `Result`), the reference
 
 [^1]: The `options.collection` configuration is required in order to ensure the proper authorization token is sent along with the HTTPS request for the asset; At this time, the collection cannot be derived from the asset HTTPS URL alone.
 
-
-```json
-  {
-    "label": "Sample",
-    "property": "entries[0].content.sample",
-    "type": "globus.embed",
-    "options": {
-      "collection": "a6f165fa-aee2-4fe5-95f3-97429c28bf82"
-    }
-  }
-```
+https://github.com/globus/example-search-portal-with-embeds/blob/1a4fae30e9e52124e3a8e150b1e18cdc7ab5091a/static.json#L31-L38
 
 <details>
   <summary>
@@ -115,17 +105,7 @@ The Plotly renderer uses the [Plotly JavaScript Open Source Graphing Library](ht
 
 To use this functionality `options.renderer` should be set to `plotly` and the sourced asset should be a JSON object that is compatible with [`Plotly.newPlot`](https://plotly.com/javascript/plotlyjs-function-reference/#plotlynewplot) single configuration object parameter.
 
-```json
-  {
-    "label": "Sample : 1951 Scatter using Plotly",
-    "value": "https://g-fe1c1.fd635.8443.data.globus.org/portal/plotly/1951_atl_plotly_scatter.json",
-    "type": "globus.embed",
-    "options": {
-      "collection": "a6f165fa-aee2-4fe5-95f3-97429c28bf82",
-      "renderer": "plotly"
-    }
-  }
-```
+https://github.com/globus/example-search-portal-with-embeds/blob/1a4fae30e9e52124e3a8e150b1e18cdc7ab5091a/static.json#L39-L47
 
 ![Screen Cast 2024-11-12 at 4 09 06 PM](https://github.com/user-attachments/assets/406efc21-7e98-4c05-a358-92e52229ef89)
 
