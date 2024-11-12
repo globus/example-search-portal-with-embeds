@@ -35,6 +35,15 @@
               "options": {
                 "collection": "a6f165fa-aee2-4fe5-95f3-97429c28bf82"
               }
+            },
+            {
+              "label": "Sample : 1951 Scatter Plot using Plotly",
+              "value": "https://g-fe1c1.fd635.8443.data.globus.org/portal/plotly/1951_atl_plotly_scatter.json",
+              "type": "globus.embed",
+              "options": {
+                "collection": "a6f165fa-aee2-4fe5-95f3-97429c28bf82",
+                "renderer": "plotly"
+              }
             }
           ]
         }
