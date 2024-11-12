@@ -147,3 +147,47 @@ Our default protections are based on best practices related to avoiding [Cross S
 - A default [Content Security Policy (CSP)](https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP) is set using a `<meta>` tag.
   - You can provide your own value for this tag using `data.attributes.contentSecurityPolicy` in your `static.json`, or setting the value to `false` to remove the `<meta>` tag.
 - The default `<object>` based embed is rendered as a child of a [`<iframe>`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/iframe) where the [`sandbox`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/iframe#sandbox), [`allow`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/iframe#allow), and additional attributes are used to create as much as an isolated runtime environment as possible.
+
+
+## Optimizaitons
+
+### Requesting HTTPS Scope on Sign In
+
+Globus Connect Server requires tokens to include [specific scopes](https://docs.globus.org/globus-connect-server/v5.4/https-access-collections/#access_tokens_for_https) when requesting assets over HTTPS. By default, when you use the `globus.embed` type the underlying component will attempt to parse authorization errors from the request and prompt the user to address them (where possible). This default implementation often means the first render of an asset will be a consent error the user needs to address (pictured below).
+
+<img width="1030" alt="Screenshot 2024-11-12 at 4 19 03 PM" src="https://github.com/user-attachments/assets/0aa41b7d-cbd4-4451-ae23-b4179449a2a8">
+
+One way to avoid this initial error is to prompt for the GCS-required scopes at _Sign In_ if the are known – the below example adds a known scope to the configured client.
+
+```jsonc
+{
+  "data": {
+    "globus": {
+      "application": {
+        "client_id": "7442cbd9-2766-42b9-9512-9195b12ed167",
+        "scopes": [
+          // The UUID here would reference the Collection where your assets are served from.
+          "https://auth.globus.org/scopes/a6f165fa-aee2-4fe5-95f3-97429c28bf82/https" 
+        ]
+      }
+    }
+  }
+}
+```
+
+**You very likely want to include this optimization when using `globus.embed`**[^2]. The only time you might not want to use this configuration is if your embedded assets are being loaded from many (dynamic) collections. In these cases, you might not be able to enumerate the scopes as a configuration option, or degrade user experience by asking for unnecessary consent at Sign In.
+
+
+[^2]: **This** portal does not use this configuration as a way to demonstrate the default behaviors.
+
+
+
+
+
+
+
+
+
+
+
+
